@@ -13,18 +13,19 @@
 
 class Cyclotron {
   public:
-    Cyclotron(unsigned int pin, unsigned int qty, unsigned int group, 
-              unsigned int initSpeed, unsigned int finalSpeed, unsigned int bootSpeed);
+    Cyclotron(unsigned int pin, unsigned int qty, unsigned char group, unsigned char speed);
     void start();
     void update();
+    
+    void setSpeed(unsigned char value, unsigned int delay);
+    void setBrightness(unsigned char value, unsigned int delay);
     
   private:
     unsigned int _pin;
     unsigned int _qty;
-    unsigned int _group;
-    unsigned int _initSpeed;
-    unsigned int _finalSpeed;
-    unsigned int _bootSpeed;
+    unsigned char _group;
+    unsigned char _speed;
+    unsigned char _brightness;
     
     unsigned int _fadeInterval;
     unsigned int _delaySpeed;
